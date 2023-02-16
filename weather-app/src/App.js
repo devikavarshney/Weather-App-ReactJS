@@ -1,6 +1,7 @@
 import hotBackg from './assets/hot.jpg';
 import coldBackg from './assets/cold.jpg';
 import cloud from './assets/cloud.webp';
+import Description from './components/Description';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           </div>
         </div>
         {/*bottom description*/}
+        <Description />
       </div>
     </div>
   </div>
