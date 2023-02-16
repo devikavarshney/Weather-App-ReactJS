@@ -1,5 +1,6 @@
 import hotBackg from './assets/hot.jpg';
 import coldBackg from './assets/cold.jpg';
+import cloud from './assets/cloud.webp';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <h3>
               Moradabad
             </h3>
-            <img src="" alt="weatherIcon" />
+            <img src={cloud} alt="weatherIcon" />
             <h3>Cloudy</h3>
           </div>
           <div className="temperature">
