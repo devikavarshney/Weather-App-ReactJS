@@ -26,7 +26,7 @@ const Description = ({ current }) => {
       icon: <WiHumidity />,
       data: current.humidity,
       title: "Humidity",
-      unit:"no unit",
+      unit:"%",
     },
     {
       id: 4,

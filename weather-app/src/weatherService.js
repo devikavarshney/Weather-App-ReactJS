@@ -7,7 +7,7 @@ const getFormattedWeatherData = async (city) => {
     .then((res) => res.json())
     .then((data) => data);
   const {
-    current: { feelslike_c, humidity, temp_c, wind_kph, condition:{text,icon}, vis_km,pressure_mb},
+    current: { feelslike_c, humidity, temp_c, temp_f, wind_kph, condition:{text,icon}, vis_km,pressure_mb},
     location: { name, country },
   } = data;
   return {
@@ -15,7 +15,7 @@ const getFormattedWeatherData = async (city) => {
     feelslike_c,
     iconURL : makeIconURL(icon),
     humidity,
-    temp_c,
+    temp_c, temp_f,
     wind_kph,
     country,vis_km,pressure_mb
   };
