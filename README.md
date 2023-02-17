@@ -15,6 +15,10 @@ You can follow the below given steps for using this website.
 ### You can now go through the code and run the web application by typing following command in the prompt
 ``` npm start ```
 
+### The website will look something like this
+![image](https://user-images.githubusercontent.com/74262916/219561066-aeec6ded-772b-4332-b61b-df0457f815f0.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
