@@ -4,6 +4,7 @@ import cloud from "./assets/cloud.webp";
 import Description from "./components/Description";
 import { useEffect, useState } from "react";
 import { getFormattedWeatherData } from "./weatherService";
+var data = require("./MOCK_DATA.json");
 
 function App() {
   const [city, setCity] = useState("Vellore");
@@ -41,6 +42,24 @@ function App() {
     }
   };
 
+  
+//   var searchInput ='search_input';
+  
+//   <script async
+//     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzDIi6ZDB1bFcpgPZx-5EBIktMmjJxauI">
+// </script>
+
+//   document.addEventListener("DOMContentLoaded", () =>{
+//     var autocomplete;
+//     autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)),{
+//       types: ['geocode'],
+//     });
+
+//     google.maps.event.addListener(autocomplete, 'place_changed', function(){
+//       var near_place = autocomplete.getPlace();
+//     });
+//   });
+  
   return (
     <div className="app" style={{ backgroundImage: `url(${backg})` }}>
       <div className="overlay">
@@ -49,12 +68,16 @@ function App() {
             <div className="section section__inputs">
               <input
                 type="text"
+                class="form-control"
+                id="search_input"
                 onKeyDown={enterKeyPressed}
                 name="city"
                 placeholder="Enter the city"
               />
               <button onClick={(e) => handlefahUnitClick(e)}>°F</button>
             </div>
+
+
             <div className="section section__temperature">
               <div className="icon">
                 <h3>{`${current.name}, ${current.country}`}</h3>
