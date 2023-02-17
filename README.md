@@ -12,7 +12,7 @@ You can follow the below given steps for using this website.
 ### Open command prompt and direct to the repository's folder (wherever you have cloned it) and run the following command to open code in vscode
 ``` code . ```
 
-### you can now go through the code and run the web application by typing following command in the prompt
+### You can now go through the code and run the web application by typing following command in the prompt
 ``` npm start ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
