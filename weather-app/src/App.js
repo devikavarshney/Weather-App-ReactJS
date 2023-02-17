@@ -14,9 +14,10 @@ function App() {
       const data = await getFormattedWeatherData(city);
       setWeather(data);
 
-      const tempHigh = data.temp_c < 18 ? setBackg(coldBackg) : setBackg(hotBackg);
+      const tempHigh =
+        data.temp_c < 18 ? setBackg(coldBackg) : setBackg(hotBackg);
     };
-      fetchWeatherData();
+    fetchWeatherData();
   }, [city]);
 
   var currentTempUnit = "°C";
@@ -36,7 +37,7 @@ function App() {
   const enterKeyPressed = (e) => {
     if (e.keyCode === 13) {
       setCity(e.currentTarget.value);
-      e.currentTarget.blur()
+      e.currentTarget.blur();
     }
   };
 
