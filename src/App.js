@@ -1,3 +1,4 @@
+import React from "react";
 import hotBackg from "./assets/hot.jpg";
 import coldBackg from "./assets/cold.jpg";
 import cloud from "./assets/cloud.webp";

@@ -1,4 +1,4 @@
-# Trademarkia Weather App Task
+# Weather App With ReactJS
 
 This is a react.js weather app, where you can search for the weather of a place which includes temperature, visibility, pressure, humidity etc. 
 
