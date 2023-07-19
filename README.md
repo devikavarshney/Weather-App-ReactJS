@@ -15,6 +15,7 @@ You can follow the below given steps for using this website.
 ``` code . ```
 
 ### You can now go through the code and run the web application by typing following command in the prompt
+``` npm install ```
 ``` npm start ```
 
 ### The website will look something like this
