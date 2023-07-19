@@ -11,11 +11,12 @@ function App() {
   const [city, setCity] = useState("Vellore");
   const [current, setWeather] = useState(null);
   const [backg, setBackg] = useState(hotBackg);
+  const [units, setUnits] = useState("metric");
   useEffect(() => {
     const fetchWeatherData = async () => {
       const data = await getFormattedWeatherData(city);
       setWeather(data);
-
+      console.log(data);
       const tempHigh =
         data.temp_c < 18 ? setBackg(coldBackg) : setBackg(hotBackg);
     };
@@ -32,6 +33,7 @@ function App() {
     const isCelcius = currentTempUnit === "°C";
     button.innerText = isCelcius ? "°F" : "°C";
     currentTempUnit = isCelcius ? "°F" : "°C";
+    // document.getElementsByClassName("changeTemp").inner
     // currentTempData = isCelcius ? current.temp_f : current.temp_c;
     console.log(currentUnit);
   };
@@ -83,11 +85,11 @@ function App() {
               <div className="icon">
                 <h3>{`${current.name}, ${current.country}`}</h3>
                 <img src={current.iconURL} alt="weatherIcon" />
-                <h3>{`${current.text}`}</h3>
+                <h3>{`${current.description}`}</h3>
               </div>
               <div className="temperature">
-                <h1>
-                  {`${current.temp_c}`} {currentTempUnit}
+                <h1 class ="changeTemp">
+                  {`${current.temp.toFixed()} ° ${units==="metric" ? "C" : "F"}`}
                 </h1>
               </div>
             </div>
