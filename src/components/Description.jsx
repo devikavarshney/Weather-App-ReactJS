@@ -5,35 +5,37 @@ import { MdVisibility } from "react-icons/md";
 import { IoIosAirplane } from "react-icons/io";
 import { WiHumidity, WiWindy } from "react-icons/wi";
 
-const Description = ({ current }) => {
+const Description = ({ current, units }) => {
+  const tempUnits = units==='metric' ? "°C" : "°F";
+  const windUnits = units==='metric' ? "m/s" : "m/h";
   const cards = [
     {
       id: 1,
       icon: <FaArrowDown />,
-      data: current.min,
+      data: current.temp_min,
       title: "Min",
-      unit: "°C",
+      unit: tempUnits,
     },
     {
       id: 2,
       icon: <FaArrowUp />,
-      data: current.max,
+      data: current.temp_max,
       title: "Max",
-      unit: "°C",
+      unit: tempUnits,
     },
     {
       id: 3,
       icon: <MdVisibility />,
-      data: current.vis_km,
+      data: current.visibility,
       title: "Visibility",
-      unit: "Km",
+      unit: "km",
     },
     {
       id: 4,
       icon: <IoIosAirplane />,
-      data: current.pressure_mb,
+      data: current.pressure,
       title: "Pressure",
-      unit: "Mb",
+      unit: "hPa",
     },
     {
       id: 5,
@@ -45,9 +47,9 @@ const Description = ({ current }) => {
     {
       id: 6,
       icon: <WiWindy />,
-      data: current.wind_kph,
+      data: current.speed,
       title: "Wind",
-      unit: "Kph",
+      unit: windUnits,
     }
   ];
   return (

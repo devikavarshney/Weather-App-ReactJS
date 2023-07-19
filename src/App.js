@@ -14,28 +14,29 @@ function App() {
   const [units, setUnits] = useState("metric");
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getFormattedWeatherData(city);
+      const data = await getFormattedWeatherData(city, units);
       setWeather(data);
       console.log(data);
       const tempHigh =
         data.temp_c < 18 ? setBackg(coldBackg) : setBackg(hotBackg);
     };
     fetchWeatherData();
-  }, [city]);
+  }, [city,units]);
 
-  var currentTempUnit = "°C";
+  // var currentTempUnit = "°C";
 
   // var currentTempData =current.temp_c;
 
-  const handlefahUnitClick = (e) => {
+  const handkeUnitsClick = (e) => {
     const button = e.currentTarget;
     const currentUnit = button.innerText.slice(1);
-    const isCelcius = currentTempUnit === "°C";
+    const isCelcius = currentUnit === "C";
     button.innerText = isCelcius ? "°F" : "°C";
-    currentTempUnit = isCelcius ? "°F" : "°C";
+    // currentUnit = isCelcius ? "°F" : "°C";
+    setUnits(isCelcius ? "metric" : "imperial");
     // document.getElementsByClassName("changeTemp").inner
     // currentTempData = isCelcius ? current.temp_f : current.temp_c;
-    console.log(currentUnit);
+    // console.log(currentUnit);
   };
 
   const enterKeyPressed = (e) => {
@@ -77,7 +78,7 @@ function App() {
                 name="city"
                 placeholder="Enter the city"
               />
-              <button onClick={(e) => handlefahUnitClick(e)}>°F</button>
+              <button onClick={(e) => handkeUnitsClick(e)}>°F</button>
             </div>
 
 
@@ -94,7 +95,7 @@ function App() {
               </div>
             </div>
             {/*bottom description*/}
-            <Description current={current} />
+            <Description current={current} units={units}/>
           </div>
         )}
       </div>
