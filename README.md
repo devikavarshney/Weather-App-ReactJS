@@ -18,6 +18,5 @@ You can follow the below given steps for using this website.
 ``` npm start ```
 
 ### The website will look something like this
-![image](<img width="1431" alt="image" src="https://github.com/devikavarshney/Weather-App-ReactJS/assets/74262916/a56be985-1c55-4386-9f74-a2433036303d">
-)
+![image](./landingPage.png)
 
