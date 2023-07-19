@@ -17,8 +17,8 @@ function App() {
       const data = await getFormattedWeatherData(city, units);
       setWeather(data);
       console.log(data);
-      const tempHigh =
-        data.temp_c < 18 ? setBackg(coldBackg) : setBackg(hotBackg);
+      const threshold = units === "metric" ? 20 : 60;
+      data.temp < threshold ? setBackg(coldBackg) : setBackg(hotBackg);
     };
     fetchWeatherData();
   }, [city,units]);
